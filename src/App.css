@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+body{
+  background-color: dodgerblue !important;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:focus{
+  outline: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
-
-.App-link {
-  color: #61dafb;
+.form{
+  background-color: aliceblue;
+  height: 400px;
+  width: 700px;
+  border-radius: 5%;
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form p{
+  color: dodgerblue ;
+  font-weight: 500;
+}
+.header{
+  color: dodgerblue ;
+  margin-bottom: 50px;
+}
+.input{
+  background-color: aliceblue;
+  border-bottom-color: dodgerblue;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  width: 270px;
+  margin-right: 70px;
+  color: dodgerblue;
+  font-size: 1.1rem;
+}
+.upperlogin{
+  display: flex;
+}
+.lowerlogin{
+  display: flex;
+}
+.alr{
+  color: dodgerblue ;
+  font-weight: 500;
+}
+.password{
+  display: flex;
+}
+.password input {
+  margin-right: 0px !important;
 }
