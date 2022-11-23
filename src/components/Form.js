@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye} from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+
 
 
 const Form = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const showIcon = <FontAwesomeIcon icon={faEye} />
+    const hideIcon = <FontAwesomeIcon icon={faEyeSlash} />
   return (
     <div className="container">
       <div className="form">
@@ -27,7 +33,7 @@ const Form = () => {
           <div className="password-cont">
             <div className="password">
             <input type={showPassword ? "text" : "password"} className="input" />
-            <button onClick={()=> setShowPassword(!showPassword)}>Switch</button>
+            <button className="eye" onClick={()=> setShowPassword(!showPassword)}>{showPassword ? showIcon : hideIcon }</button>
             </div>
             <p>Password</p>
           </div>
