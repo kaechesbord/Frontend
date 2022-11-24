@@ -10,6 +10,7 @@ const Login = () => {
   const showIcon = <FontAwesomeIcon icon={faEye} />;
   const hideIcon = <FontAwesomeIcon icon={faEyeSlash} />;
   return (
+    <div className="contained-log">
     <div className="container">
       <div className="form">
         <h1 className="header">Login</h1>
@@ -55,6 +56,7 @@ const Login = () => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 };

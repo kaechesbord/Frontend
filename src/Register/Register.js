@@ -10,6 +10,7 @@ const Register = () => {
   const showIcon = <FontAwesomeIcon icon={faEye} />;
   const hideIcon = <FontAwesomeIcon icon={faEyeSlash} />;
   return (
+    <div className = "contained-reg">
     <div className="container">
       <div className="form">
         <h1 className="header">Register</h1>
@@ -55,6 +56,7 @@ const Register = () => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 };
