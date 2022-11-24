@@ -44,6 +44,11 @@
   }
   .lowerlogin{
     display: flex;
+}
+.lowerlogin2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .alr{
     color: #192841  ;
@@ -52,6 +57,9 @@
   }
   .password{
     display: flex;
+  }
+  .email2{
+    padding-left: 50px;
   }
   .password input {
     margin-right: 0px;

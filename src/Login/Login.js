@@ -4,6 +4,7 @@ import "./Login.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,18 +15,8 @@ const Login = () => {
     <div className="container">
       <div className="form">
         <h1 className="header">Login</h1>
-        <div className="upperlogin">
-          <div className="fname">
-            <input type="text" className="input" />
-            <p>First Name</p>
-          </div>
-          <div className="lname">
-            <input type="text" className="input" />
-            <p>Last Name</p>
-          </div>
-        </div>
-        <div className="lowerlogin">
-          <div className="email">
+        <div className="lowerlogin2">
+          <div className="email2">
             <input type="text" className="input" />
             <p>Email</p>
           </div>
@@ -47,12 +38,12 @@ const Login = () => {
         </div>
         <div className="btncont">
           <button type="button" className="submit">
-            Submit
+            Login
           </button>
         </div>
         <div className="alr">
           <a href=" #" class="link-primary">
-            Already have an account? Login Here.
+           <Link to={"/register"}> Don't have an account? Register Here.</Link>
           </a>
         </div>
       </div>

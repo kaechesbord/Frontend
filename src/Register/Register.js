@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -52,7 +53,7 @@ const Register = () => {
         </div>
         <div className="alr">
           <a href=" #" class="link-primary">
-            Already have an account? Login Here.
+           <Link to={"/login"}> Already have an account? Login Here.</Link>
           </a>
         </div>
       </div>
