@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import "../App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "./Login.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const Form = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const showIcon = <FontAwesomeIcon icon={faEye} />;
   const hideIcon = <FontAwesomeIcon icon={faEyeSlash} />;
   return (
     <div className="container">
       <div className="form">
-        <h1 className="header">Sign Up</h1>
+        <h1 className="header">Login</h1>
         <div className="upperlogin">
           <div className="fname">
             <input type="text" className="input" />
@@ -51,7 +51,7 @@ const Form = () => {
         </div>
         <div className="alr">
           <a href=" #" class="link-primary">
-            Already have an account?
+            Already have an account? Login Here.
           </a>
         </div>
       </div>
@@ -59,4 +59,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Login;
