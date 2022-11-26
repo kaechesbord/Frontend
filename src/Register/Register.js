@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "../App.css";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -8,56 +9,83 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [firstName, setFname] = useState("");
+  const [lastName, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const showIcon = <FontAwesomeIcon icon={faEye} />;
   const hideIcon = <FontAwesomeIcon icon={faEyeSlash} />;
+
+  const onSubmit = () => {
+    axios.post("https://b053-178-209-19-23.eu.ngrok.io/register", {
+        firstName,
+        lastName,
+        email,
+        password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <div className = "contained-reg">
-    <div className="container">
-      <div className="form">
-        <h1 className="header">Register</h1>
-        <div className="upperlogin">
-          <div className="fname">
-            <input type="text" className="input" />
-            <p>First Name</p>
-          </div>
-          <div className="lname">
-            <input type="text" className="input" />
-            <p>Last Name</p>
-          </div>
-        </div>
-        <div className="lowerlogin">
-          <div className="email">
-            <input type="text" className="input" />
-            <p>Email</p>
-          </div>
-          <div className="password-cont">
-            <div className="password">
+    <div className="contained-reg">
+      <div className="container">
+        <div className="form">
+          <h1 className="header">Register</h1>
+          <div className="upperlogin">
+            <div className="fname">
               <input
-                type={showPassword ? "text" : "password"}
+                type="text"
                 className="input"
+                placeholder="First Name"
+                onChange={(e) => setFname(e.target.value)}
               />
-              <button
-                className="eye"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? showIcon : hideIcon}
-              </button>
             </div>
-            <p>Password</p>
+            <div className="lname">
+              <input
+                type="text"
+                className="input"
+                placeholder="Last Name"
+                onChange={(e) => setLname(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-        <div className="btncont">
-          <button type="button" className="submit">
-            Submit
-          </button>
-        </div>
-        <div className="alr">
-          <a href=" #" class="link-primary">
-           <Link to={"/login"}> Already have an account? Login Here.</Link>
-          </a>
+          <div className="lowerlogin">
+            <div className="email">
+              <input
+                type="text"
+                className="input"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="password-cont">
+              <div className="password">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  className="eye"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? showIcon : hideIcon}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="btncont">
+            <button type="button" className="submit" onClick={onSubmit}>
+              Submit
+            </button>
+          </div>
+          <div className="alr">
+              <Link className="alr-link" to={"/login"}> Already have an account? Login Here.</Link>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
