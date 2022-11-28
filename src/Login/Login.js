@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className="contained-log">
     <div className="container">
-      <div className="form2"  onSubmit={handleSubmit(onSubmitHandler)}>
+      <form className="form2" onSubmit={handleSubmit(onSubmitHandler)}>
         <h1 className="header">Login</h1>
         <div className="lowerlogin2">
           <div className="email2">
@@ -68,14 +68,14 @@ const Login = () => {
           </div>
         </div>
         <div className="btncont">
-          <button type="button" onClick={onSubmit} className="submit">
+          <button type="button" onClick={onSubmit}  className="submit">
             Login
           </button>
         </div>
         <div className="alr">     
            <Link className="alr-link" to={"/register"}> Don't have an account? Register Here.</Link>
         </div>
-      </div>
+      </form>
     </div>
     </div>
   );
